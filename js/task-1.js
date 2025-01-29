@@ -1,8 +1,10 @@
 "use strict";
 
 function isEnoughCapacity(products, containerSize) {
-    for (const product in products) {
-       if (products[product] > containerSize) {
+  let totalProducts = 0;
+  for (const key in products) {
+    totalProducts += products[key];
+       if (totalProducts > containerSize) {
            return false;
         }
     }
